@@ -130,51 +130,71 @@
 // console.log(reverseSortedArrays(array1, array2))
 
 
-const array1 = [1, 2, 3, 4, 6, 2]
-const array2 = [8, 9, 0, 10, 6, 7]
+// const array1 = [1, 2, 3, 4, 6, 2]
+// const array2 = [8, 9, 0, 10, 6, 7]
 
 
-const sumOfNumbersAndThierIndexes = (arr1, arr2, target) => {
+// const sumOfNumbersAndThierIndexes = (arr1, arr2, target) => {
 
 
-  // error handling 
-  if (arr1.length < 1 || arr2.length < 1 || ((typeof arr1) !== 'object')) {
+//   // error handling
+//   if (arr1.length < 1 || arr2.length < 1 || ((typeof arr1) !== 'object')) {
     
-    return 'Invalid Inputs'
+//     return 'Invalid Inputs'
     
-  }
+//   }
 
-  const firstSetObject = {}
+//   const firstSetObject = {}
   
-  let arrayOfCombinators = []
+//   let arrayOfCombinators = []
 
-  //  create a hash table of the first array to avoid nested arrays TC of 0(n^2)
-  for (let i = 0; i < arr1.length; i++){
+//   //  create a hash table of the first array to avoid nested arrays TC of 0(n^2)
+//   for (let i = 0; i < arr1.length; i++){
 
-    if (!firstSetObject[arr1[i]]) {
+//     if (!firstSetObject[arr1[i]]) {
 
-      firstSetObject[arr1[i]] = arr1[i]
+//       firstSetObject[arr1[i]] = arr1[i]
       
-    }
+//     }
 
-  }
+//   }
 
-  //O(a)
+//   //O(a)
 
 
-  for (let j = 0; j < arr2.length; j++){
+//   for (let j = 0; j < arr2.length; j++){
 
-    if ((firstSetObject[arr1[j]] + arr2[j]) === target) {
+//     if ((firstSetObject[arr1[j]] + arr2[j]) === target) {
       
-     arrayOfCombinators = arrayOfCombinators.concat([arr1.indexOf(arr1[j]) , arr2.indexOf(arr2[j]) ])
+//      arrayOfCombinators = arrayOfCombinators.concat([arr1.indexOf(arr1[j]) , arr2.indexOf(arr2[j]) ])
 
-    }
-  }
-  //O(b)
+//     }
+//   }
+//   //O(b)
   
-  return arrayOfCombinators
-}
+//   return arrayOfCombinators
+// }
 
-console.log(sumOfIndex(array1, array2, 9)) 
+// console.log(sumOfIndex(array1, array2, 9))
 
 // O(a+b)  Time complexity
+
+// const findFirstRecurrentNumber = (numbers) => {
+
+//   // do a hash table that stores all the array of numbers
+//   // do a for loop that loops through that object and if a particular match is identified, then return that number
+
+//   const toHashTable = {}
+
+//   for (let i = 0; i < numbers.length; i++){
+//     const isCounted = toHashTable[numbers[i]]
+//     if (isCounted) {
+//       return isCounted
+//     }
+//     toHashTable[numbers[i]] = numbers[i]
+//   }
+//   return undefined
+// }
+
+// console.log(findFirstRecurrentNumber([ 3, 4, 6, 2, ]))
+
