@@ -198,3 +198,20 @@
 
 // console.log(findFirstRecurrentNumber([ 3, 4, 6, 2, ]))
 
+
+
+class LinkedList {
+  constructor(value) {
+    this.head = {
+      value: value,
+      next: null
+    }
+
+    this.tail = this.head
+
+    this.length = 1
+  }
+}
+
+const LinkedList1 = new LinkedList(70)
+console.log(LinkedList1)
