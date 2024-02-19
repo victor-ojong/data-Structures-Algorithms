@@ -200,18 +200,47 @@
 
 
 
-class LinkedList {
-  constructor(value) {
-    this.head = {
-      value: value,
-      next: null
-    }
+// class LinkedList {
+//   constructor(value) {
+//     this.head = {
+//       value: value,
+//       next: null
+//     }
 
-    this.tail = this.head
+//     this.tail = this.head
 
-    this.length = 1
+//     this.length = 1
+//   }
+// }
+
+// const LinkedList1 = new LinkedList(70)
+// console.log(LinkedList1)
+
+  let times = 0
+
+function fibonacci() {
+  const cache = {}
+
+  
+  return function fib(n) {
+     times++
+   if (n < 2) {
+    return n
+  }
+
+  if (n in cache) {
+    return cache[n]
+     }
+
+     cache[n] = fib(n - 1) + fib(n - 2)
+     
+     return cache[n]
   }
 }
 
-const LinkedList1 = new LinkedList(70)
-console.log(LinkedList1)
+
+const fibo = fibonacci()
+
+console.log(fibo(1))
+console.log(times)  
+// time complexity of o(2^n) really slow to execute 
