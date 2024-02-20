@@ -41,6 +41,8 @@
 //   return text.split('').sort().join('')
 
 // }
+
+
 // const isAnagram = (str1, str2) => {
 
 //   const sortedString1 = stringSorter(str1)
@@ -52,6 +54,7 @@
 // }
 
 // console.log(isAnagram('isiii77vict', 'iiiis77vict'))
+
 
 // const memo = ['memo', 'memo', 'memo','memo','memo','memo','memo','memo','memo']
 
@@ -216,31 +219,88 @@
 // const LinkedList1 = new LinkedList(70)
 // console.log(LinkedList1)
 
-  let times = 0
+//   let times = 0
 
-function fibonacci() {
-  const cache = {}
+// function fibonacci() {
+//   const cache = {}
 
-  
-  return function fib(n) {
-     times++
-   if (n < 2) {
-    return n
+//   return function fib(n) {
+//      times++
+//    if (n < 2) {
+//     return n
+//   }
+
+//   if (n in cache) {
+//     return cache[n]
+//      }
+
+//      cache[n] = fib(n - 1) + fib(n - 2)
+     
+//      return cache[n]
+//   }
+// }
+
+
+// const fibo = fibonacci()
+
+// console.log(fibo(1))
+// console.log(times)
+// time complexity of o(2^n) really slow to execute
+// but by using dynamic programming - caching and closures we have achieved a time complexity of O(n) and space complexity of O(n)
+
+
+
+// LINKED LIST
+
+class firstLinkedList {
+  constructor(value) {
+    this.head = {
+      value,
+      next:null
+    }
+
+    this.tail = this.head
+    this.length= 1
   }
 
-  if (n in cache) {
-    return cache[n]
-     }
+  append(value) {
 
-     cache[n] = fib(n - 1) + fib(n - 2)
-     
-     return cache[n]
+    const newNode = {
+      value,
+      next:null
+    }
+
+    this.tail.next = newNode
+
+    this.tail = newNode
+
+    this.length++
+    
+    return this
+    
+  }
+
+
+  prepend(value) {
+
+    const newNode = {
+      value, 
+      next: null
+    }
+
+    newNode.next = this.head
+
+    this.head = newNode
+
+    this.length++
+
+    return  this
+    
   }
 }
 
+const LinkedList2 = new firstLinkedList(10)
 
-const fibo = fibonacci()
+console.log(LinkedList2.append(5))
 
-console.log(fibo(1))
-console.log(times)  
-// time complexity of o(2^n) really slow to execute 
+console.log(LinkedList2.prepend(16))
