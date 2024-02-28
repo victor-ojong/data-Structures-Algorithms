@@ -252,55 +252,97 @@
 
 // LINKED LIST
 
-class firstLinkedList {
-  constructor(value) {
-    this.head = {
-      value,
-      next:null
-    }
+// class firstLinkedList {
+//   constructor(value) {
+//     this.head = {
+//       value,
+//       next:null
+//     }
 
-    this.tail = this.head
-    this.length= 1
+//     this.tail = this.head
+//     this.length= 1
+//   }
+
+//   append(value) {
+
+//     const newNode = {
+//       value,
+//       next:null
+//     }
+
+//     this.tail.next = newNode
+
+//     this.tail = newNode
+
+//     this.length++
+    
+//     return this
+    
+//   }
+
+
+//   prepend(value) {
+
+//     const newNode = {
+//       value,
+//       next: null
+//     }
+
+//     newNode.next = this.head
+
+//     this.head = newNode
+
+//     this.length++
+
+//     return  this
+    
+//   }
+// }
+
+// const LinkedList2 = new firstLinkedList(10)
+
+// console.log(LinkedList2.append(5))
+
+// console.log(LinkedList2.prepend(16))
+
+
+let text = 'hahakdndididjdjdjdjdjdjdjjkkkkkkkkkkkkkkkkkkkkkkkkkkje'
+
+const mostRepeatedLetter = (text) => {
+  // convert to a string
+
+  text = text.split('');
+
+  let hashTable = {}
+
+
+  for (let i = 0; i < text.length; i++){
+
+    if (hashTable[text.at(i)]) {
+      
+      hashTable[text.at(i)]++;
+    }
+    else {
+      
+      hashTable[text.at(i)] = 1
+    }
+    
   }
 
-  append(value) {
+  console.log(hashTable)
 
-    const newNode = {
-      value,
-      next:null
-    }
+  const sortedObject = Object.entries(hashTable).sort((prev, next) => prev[1] - next[1]);
 
-    this.tail.next = newNode
-
-    this.tail = newNode
-
-    this.length++
-    
-    return this
-    
-  }
+  return sortedObject.pop().at(0)
 
 
-  prepend(value) {
+  // min - sortedObject.shift().at(0)
 
-    const newNode = {
-      value, 
-      next: null
-    }
+  // max - sortedObject.pop().at(0)
 
-    newNode.next = this.head
 
-    this.head = newNode
 
-    this.length++
-
-    return  this
-    
-  }
 }
 
-const LinkedList2 = new firstLinkedList(10)
 
-console.log(LinkedList2.append(5))
-
-console.log(LinkedList2.prepend(16))
+console.log(mostRepeatedLetter(text))
